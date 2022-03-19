@@ -315,7 +315,7 @@ MonoBehaviour:
   _asteroid: {fileID: 130354188673172308, guid: 588c90e8b1f2d1946889ad88d1e3e815,
     type: 3}
   _timeBetweenSpawn: 2
-  _directionMove: {fileID: 1922356916}
+  _target: {fileID: 1922356916}
   _textCount: {fileID: 1723471903}
 --- !u!20 &519420031
 Camera:

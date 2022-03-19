@@ -63,7 +63,7 @@ public class Asteroid : MonoBehaviour
         _destructionParticles = GetComponent<ParticleSystem>();
         _destructionSound = GetComponent<AudioSource>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        GetComponent<Transform>().localScale = new Vector3(scale, scale, scale);        
+        transform.localScale = new Vector3(scale, scale, scale);        
     }
 
     private void Start()

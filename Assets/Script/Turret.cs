@@ -11,25 +11,23 @@ using UnityEngine.UIElements;
 
 public class Turret : MonoBehaviour
 {
-    private Transform _transform = null;
-    private ParticleSystem _particleSystemShoot = null;
-    private AudioSource _audioSourceShoot = null;
+    private ParticleSystem _shoot = null;
+    private AudioSource _shootSound = null;
 
     private bool _isReadyShoot = true;
     private float _timeBetweenShoot = 1.8f;
 
     private void Awake()
     {
-        _transform = GetComponent<Transform>();
-        _particleSystemShoot = GetComponent<ParticleSystem>();
-        _audioSourceShoot = GetComponent<AudioSource>();
+        _shoot = GetComponent<ParticleSystem>();
+        _shootSound = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        _transform.eulerAngles = new Vector3(0f, 0f, -math.degrees(math.atan2(mousePosition.x, mousePosition.y)));
+        transform.eulerAngles = new Vector3(0f, 0f, -math.degrees(math.atan2(mousePosition.x, mousePosition.y)));
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -50,8 +48,8 @@ public class Turret : MonoBehaviour
         if (_isReadyShoot)
         {
             _isReadyShoot = false;
-            _particleSystemShoot.Play();
-            _audioSourceShoot.Play();
+            _shoot.Play();
+            _shootSound.Play();
             StartCoroutine(WaitBetweenShots(_timeBetweenShoot));
         }
     }

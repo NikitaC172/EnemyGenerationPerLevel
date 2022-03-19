@@ -9,12 +9,12 @@ public class WarningTriangle : MonoBehaviour
 {
     private AudioSource _warningSound = null;
     private Animator _warningAnimator = null;
-    private const string _showTrigonAnimation = "ShowTrigon";
+    private const string ShowTrigonAnimation = "ShowTrigon";
 
     public void Warn()
     {
         _warningSound.Play();
-        _warningAnimator.Play(_showTrigonAnimation);
+        _warningAnimator.Play(ShowTrigonAnimation);
     }
 
     private void Awake()

@@ -9,12 +9,12 @@ public class AsteroidRender : MonoBehaviour
 {
     private AudioSource _detectSound = null;
     private Animator _showSprite = null;
-    private const string _showTrigonAnimation = "ShowAsteroid";
+    private const string ShowTrigonAnimation = "ShowAsteroid";
 
     public void Detect()
     {
         _detectSound.Play();
-        _showSprite.Play(_showTrigonAnimation);
+        _showSprite.Play(ShowTrigonAnimation);
     }
 
     private void Awake()
