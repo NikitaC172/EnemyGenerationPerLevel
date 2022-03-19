@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Asteroid _asteroid = null;
     [SerializeField] private float _timeBetweenSpawn = 2f;
     [SerializeField] private GameObject _directionMove = null;
-    [SerializeField] private Count _textCount = null;
+    [SerializeField] private AsteroidsDestroyedCounter _textCount = null;
 
     private Transform[] _points;
 

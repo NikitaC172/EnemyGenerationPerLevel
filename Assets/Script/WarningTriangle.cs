@@ -9,7 +9,7 @@ public class WarningTriangle : MonoBehaviour
 {
     private AudioSource _warningSound = null;
     private Animator _warningAnimator = null;
-    private string _showTrigonAnimation = "ShowTrigon";
+    private const string _showTrigonAnimation = "ShowTrigon";
 
     public void Warn()
     {

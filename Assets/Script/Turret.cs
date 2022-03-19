@@ -6,6 +6,9 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+[RequireComponent(typeof(ParticleSystem))]
+[RequireComponent(typeof(AudioSource))]
+
 public class Turret : MonoBehaviour
 {
     private Transform _transform = null;

@@ -91,7 +91,7 @@ MonoBehaviour:
   _maxForce: 5
   _minScale: 0.5
   _maxScale: 1
-  _objectWithSpriteRender: {fileID: 130354188748924405}
+  _objectWithSpriteRender: {fileID: 1509561558565174334}
   _objectWithTrigon: {fileID: 8595421269931099705}
 --- !u!199 &130354188673172306
 ParticleSystemRenderer:
@@ -4923,6 +4923,7 @@ GameObject:
   - component: {fileID: 130354188748924403}
   - component: {fileID: 130354188748924404}
   - component: {fileID: 1313981823722453355}
+  - component: {fileID: 1509561558565174334}
   m_Layer: 0
   m_Name: SpriteBase
   m_TagString: Untagged
@@ -4982,7 +4983,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6bc4c163fd4031b45a81501e8a99fc82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
@@ -5109,6 +5110,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1509561558565174334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130354188748924405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c966bc1c7c3141b9bd24f45c54424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &130354188793421656
 GameObject:
   m_ObjectHideFlags: 0
@@ -5232,7 +5245,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 4c9f7bd45c635e3499f4fe6f8eafe76e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0

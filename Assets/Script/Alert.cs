@@ -6,9 +6,9 @@ public class Alert : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (Collider2D.FindObjectOfType<Asteroid>())
+        if (collider.TryGetComponent<Asteroid>(out Asteroid asteroid))
         {
-            collider.GetComponent<Asteroid>().CallWarning();
+            asteroid.CallWarning();
         }
     }
 }
