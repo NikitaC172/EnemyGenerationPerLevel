@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnPointParent: {fileID: 1788626252}
-  _asteroid: {fileID: 130354188673172309, guid: 588c90e8b1f2d1946889ad88d1e3e815,
+  _asteroid: {fileID: 130354188673172308, guid: 588c90e8b1f2d1946889ad88d1e3e815,
     type: 3}
   _timeBetweenSpawn: 2
 --- !u!20 &519420031

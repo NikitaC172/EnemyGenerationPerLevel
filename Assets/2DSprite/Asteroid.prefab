@@ -91,9 +91,8 @@ MonoBehaviour:
   _maxForce: 5
   _minScale: 0.5
   _maxScale: 1
-  _namePointDestination: Station
   _objectWithSpriteRender: {fileID: 130354188748924405}
-  _objectWithTrigon: {fileID: 130354188847487988}
+  _objectWithTrigon: {fileID: 8595421269931099705}
 --- !u!199 &130354188673172306
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -4983,7 +4982,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 6bc4c163fd4031b45a81501e8a99fc82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
@@ -5173,6 +5172,7 @@ GameObject:
   - component: {fileID: 130354188847487986}
   - component: {fileID: 130354188847487987}
   - component: {fileID: 8594137352656375158}
+  - component: {fileID: 8595421269931099705}
   m_Layer: 0
   m_Name: SpriteTrigon
   m_TagString: Untagged
@@ -5359,3 +5359,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8595421269931099705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130354188847487988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd3f3ab6f655984891ec87d5551e29f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

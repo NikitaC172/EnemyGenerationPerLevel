@@ -15,7 +15,7 @@ public class Count : MonoBehaviour
         _textCount.text = Convert.ToString(_count);
     }
 
-    private void OnEnable()
+    private void Awake()
     {
         _textCount = GetComponent<Text>();
     }

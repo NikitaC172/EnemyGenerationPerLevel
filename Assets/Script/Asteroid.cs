@@ -9,18 +9,25 @@ public class Asteroid : MonoBehaviour
     [SerializeField] private float _maxForce = 25.0f;
     [SerializeField] private float _minScale = 0.5f;
     [SerializeField] private float _maxScale = 1.0f;
-    [SerializeField] private string _namePointDestination = "Station";
     [SerializeField] private GameObject _objectWithSpriteRender = null;
-    [SerializeField] private GameObject _objectWithTrigon = null;
+    [SerializeField] private WarningTriangle _objectWithTrigon = null;
 
-    private GameObject _destination = null;
-    private Text _textCount = null;
+    private ParticleSystem _destructionParticles = null;
+    private AudioSource _destructionSound = null;
+    private Animator _appearanceAnimation = null;
+    private AudioSource _appearanceSound = null;
+    private GameObject _directionMove = null;
+    private Count _textCount = null;
     private Rigidbody2D _rigidbody2D = null;
     private string _showAsteroidAnimation = "ShowAsteroid";
-    private string _showTrigonAnimation = "ShowTrigon";
     private bool _isActive = true;
     private float _timeDestroy = 0.5f;
 
+    public void SetDirectionAndCounter(Count count, GameObject directionMove)
+    {
+        _directionMove = directionMove;
+        _textCount = count;
+    }
 
     public void Remove()
     {
@@ -32,32 +39,37 @@ public class Asteroid : MonoBehaviour
         if (_isActive)
         {
             _isActive = false;
-            GetComponent<ParticleSystem>().Play();
-            GetComponent<AudioSource>().Play();
-            _textCount.GetComponent<Count>().Increase();
+            _destructionParticles.Play();
+            _destructionSound.Play();
+            _textCount.Increase();
             Destroy(gameObject, _timeDestroy);
         }
     }
 
     public void Detect()
     {
-        _objectWithSpriteRender.GetComponent<Animator>().Play(_showAsteroidAnimation);
-        _objectWithSpriteRender.GetComponent<AudioSource>().Play();
+        _appearanceAnimation.Play(_showAsteroidAnimation);
+        _appearanceSound.Play();
     }
 
-    public void ShowTrigon()
+    public void CallWarning()
     {
-        _objectWithTrigon.GetComponent<Animator>().Play(_showTrigonAnimation);
-        _objectWithTrigon.GetComponent<AudioSource>().Play();
+        _objectWithTrigon.Warn();
     }
 
-    private void OnEnable()
+    private void Awake()
     {
-        _textCount = GameObject.FindObjectOfType<Text>();
-        _destination = GameObject.Find(_namePointDestination);
         float scale = UnityEngine.Random.Range(_minScale, _maxScale);
-        GetComponent<Transform>().localScale = new Vector3(scale, scale, scale);
+        _destructionParticles = GetComponent<ParticleSystem>();
+        _destructionSound = GetComponent<AudioSource>();
+        _appearanceAnimation = _objectWithSpriteRender.GetComponent<Animator>();
+        _appearanceSound = _objectWithSpriteRender.GetComponent<AudioSource>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        _rigidbody2D.AddForce((_destination.transform.position - transform.position) * Random.Range(_minForce, _maxForce));
+        GetComponent<Transform>().localScale = new Vector3(scale, scale, scale);        
+    }
+
+    private void Start()
+    {
+        _rigidbody2D.AddForce((_directionMove.transform.position - transform.position) * Random.Range(_minForce, _maxForce));
     }
 }

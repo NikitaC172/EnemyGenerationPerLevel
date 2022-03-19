@@ -15,7 +15,7 @@ public class Turret : MonoBehaviour
     private bool _isReadyShoot = true;
     private float _timeBetweenShoot = 1.8f;
 
-    private void OnEnable()
+    private void Awake()
     {
         _transform = GetComponent<Transform>();
         _particleSystemShoot = GetComponent<ParticleSystem>();
